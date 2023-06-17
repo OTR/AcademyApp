@@ -7,4 +7,6 @@ sealed class ScreenState {
 
     object Initial : ScreenState()
 
+    object DisplayCategories : ScreenState()
+
 }
