@@ -1,4 +1,4 @@
-package com.github.otr.academy.ui.theme
+package com.github.otr.academy.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
