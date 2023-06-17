@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 
-import com.github.otr.academy.ui.theme.AcademyAppTheme
+import com.github.otr.academy.presentation.theme.AcademyAppTheme
 
 /**
  *
