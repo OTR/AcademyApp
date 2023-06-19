@@ -1,5 +1,6 @@
 package com.github.otr.academy.presentation.categories_screen.component.track
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,10 +18,17 @@ import com.github.otr.academy.presentation.theme.getCategoryChipBorder
  *
  */
 @Composable
-fun TrackCard(track: Track) {
+fun TrackCard(
+    track: Track,
+    onTrackCardClickListener: (Track) -> Unit
+) {
 
     Card(
-        modifier = Modifier.fillMaxWidth().padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(all = DEFAULT_HORIZONTAL_PADDING * 2)
+            .clickable { onTrackCardClickListener(track) }
+        ,
         backgroundColor = MaterialTheme.colors.background,
         border = getCategoryChipBorder(selected = false),
         elevation = 8.dp
