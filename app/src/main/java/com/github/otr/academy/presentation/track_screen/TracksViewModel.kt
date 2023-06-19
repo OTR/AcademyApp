@@ -1,5 +1,6 @@
-package com.github.otr.academy.presentation.categories_screen
+package com.github.otr.academy.presentation.track_screen
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 
@@ -30,6 +31,7 @@ class TracksViewModel : ViewModel() {
     val trackListStateFlow: StateFlow<List<Track>> = _trackListStateFlow.asStateFlow()
 
     init {
+        Log.d("LOG", "A NEW TRACKS VIEW MODEL CREATED")
         viewModelScope.launch {
             val trackList: List<Track> = getAllTracks()
             _trackListStateFlow.emit(value = trackList)
@@ -45,7 +47,13 @@ class TracksViewModel : ViewModel() {
     }
 
     fun getTrackById(trackId: Int): Track {
+        println()
         return trackListStateFlow.value.first { it.id == trackId }
     }
 
+
+    override fun onCleared() {
+        Log.d("LOG", "View Model Destroyed")
+        super.onCleared()
+    }
 }

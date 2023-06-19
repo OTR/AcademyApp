@@ -3,7 +3,7 @@ package com.github.otr.academy.presentation.navigation
 /**
  *
  */
-sealed class ScreenState(
+sealed class Screen(
     val route: String
 ) {
 
@@ -11,16 +11,18 @@ sealed class ScreenState(
 
         private const val LOGIN_SCREEN_ROUTE: String = "login_screen"
         private const val CATEGORIES_SCREEN_ROUTE: String = "categories_screen"
+
         private const val BASE_TRACK_SCREEN_ROUTE: String = "track_screen"
-        private const val TRACK_SCREEN_ROUTE: String = "$BASE_TRACK_SCREEN_ROUTE/{track_id}"
+        const val TRACK_SCREEN_ID_KEY: String = "track_id"
+        private const val TRACK_SCREEN_ROUTE: String = "$BASE_TRACK_SCREEN_ROUTE/{$TRACK_SCREEN_ID_KEY}"
 
     }
 
-    object LoginScreen: ScreenState(route = LOGIN_SCREEN_ROUTE)
+    object Login: Screen(route = LOGIN_SCREEN_ROUTE)
 
-    object CategoriesScreen : ScreenState(route = CATEGORIES_SCREEN_ROUTE)
+    object Categories : Screen(route = CATEGORIES_SCREEN_ROUTE)
 
-    object TrackScreen : ScreenState(route = TRACK_SCREEN_ROUTE) {
+    object Track : Screen(route = TRACK_SCREEN_ROUTE) {
 
         fun routeWithArgs(trackId: Int): String {
             return "$BASE_TRACK_SCREEN_ROUTE/$trackId"

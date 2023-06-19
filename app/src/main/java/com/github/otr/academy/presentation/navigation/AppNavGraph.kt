@@ -1,9 +1,15 @@
 package com.github.otr.academy.presentation.navigation
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+
+import com.github.otr.academy.domain.entitiy.Track
+import com.github.otr.academy.presentation.categories_screen.CategoriesScreen
+import com.github.otr.academy.presentation.login_screen.LoginScreen
+import com.github.otr.academy.presentation.track_screen.TrackScreen
 
 /**
  *
@@ -11,18 +17,30 @@ import androidx.navigation.compose.composable
 @Composable
 fun AppNavGraph(
     navHostController: NavHostController,
-    loginScreenContent: @Composable () -> Unit,
-    categoriesScreenContent: @Composable () -> Unit,
-    trackScreenContent: @Composable () -> Unit
 ) {
 
     NavHost(
         navController = navHostController,
-        startDestination = "login_screen"
+        startDestination = Screen.Login.route
     ) {
-        composable(ScreenState.LoginScreen.route) { loginScreenContent() }
-        composable(ScreenState.CategoriesScreen.route) { categoriesScreenContent() }
-        composable(ScreenState.TrackScreen.route) { trackScreenContent }
+
+        composable(Screen.Login.route) {
+            LoginScreen( navHostController::navigateToCategoriesScreen )
+        }
+
+        composable(Screen.Categories.route) {
+            CategoriesScreen { track: Track ->
+                navHostController.navigate(Screen.Track.routeWithArgs(track.id))
+                }
+            }
+
+        composable(Screen.Track.route) {
+            it.arguments?.getString(Screen.TRACK_SCREEN_ID_KEY)?.let { key: String ->
+                val trackId: Int = key.toInt()
+                Log.d("LOG", key)
+                TrackScreen(trackId, navHostController::navigateToCategoriesScreen)
+            }
+        }
 
     }
 

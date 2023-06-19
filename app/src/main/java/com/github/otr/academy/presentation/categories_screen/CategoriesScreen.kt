@@ -8,15 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
 
 import com.github.otr.academy.domain.entitiy.Category
 import com.github.otr.academy.domain.entitiy.Track
 import com.github.otr.academy.presentation.categories_screen.component.CategoriesHeader
 import com.github.otr.academy.presentation.categories_screen.component.category.CategoryChips
 import com.github.otr.academy.presentation.categories_screen.component.track.TrackCard
-import com.github.otr.academy.presentation.navigation.ScreenState
 import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
+import com.github.otr.academy.presentation.track_screen.TracksViewModel
+import com.github.otr.academy.presentation.track_screen.TracksViewModelFactory
 
 /**
  * Vertically scrollable component was measured with an infinity maximum height
@@ -33,11 +33,11 @@ import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
  */
 @Composable
 fun CategoriesScreen(
-    navHostController: NavHostController
+    onTrackCardClickListener: (Track) -> Unit
 ) {
 
     val categoriesViewModel: CategoriesViewModel = viewModel()
-    val tracksViewModel: TracksViewModel = viewModel()
+    val tracksViewModel: TracksViewModel = viewModel(factory = TracksViewModelFactory)
 
     val categoriesState: State<CategoriesState> = categoriesViewModel
         .categoriesFlow
@@ -45,9 +45,6 @@ fun CategoriesScreen(
     val currCategoriesState: CategoriesState = categoriesState.value
 
     val onCategoryChipClickListener: (Category) -> Unit = categoriesViewModel::changeSelectedCategory
-    val onTrackCardClickListener: (Track) -> Unit = {
-        navHostController.navigate(ScreenState.TrackScreen.routeWithArgs(it.id))
-    }
 
     val selectedCategory: Category? = currCategoriesState.categories.find {
         it.id == currCategoriesState.selectedCategoryId
