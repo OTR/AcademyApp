@@ -2,7 +2,6 @@ package com.github.otr.academy.presentation.login_screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -13,11 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 
 import com.github.otr.academy.R
-import com.github.otr.academy.presentation.navigation.ScreenState
+import com.github.otr.academy.presentation.navigation.navigateToCategoriesScreen
 import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
 
 /**
@@ -28,9 +26,7 @@ fun LoginScreen(
     navHostController: NavHostController
 ) {
 
-    val onBtnClickListener: () -> Unit = {
-        navHostController.navigate(ScreenState.CategoriesScreen.route)
-    }
+    val onBtnClickListener: () -> Unit = navHostController::navigateToCategoriesScreen
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -42,7 +38,7 @@ fun LoginScreen(
             text = stringResource(R.string.login_screen_help_text)
         )
         Spacer(modifier = Modifier.height(DEFAULT_VERTICAL_PADDING * 4))
-        Button(onClick = { onBtnClickListener() }) {
+        Button(onClick = onBtnClickListener) {
             Text(stringResource(R.string.login_screen_test_account_button))
         }
     }

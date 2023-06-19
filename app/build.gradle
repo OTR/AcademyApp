@@ -59,6 +59,7 @@ dependencies {
     implementation("androidx.compose.material:material:1.4.3")
 
     // viewModel() Composable function
+    // providing a scope that survives configuration changes and being on the back stack
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
 
     // Gson

@@ -44,4 +44,8 @@ class TracksViewModel : ViewModel() {
         return trackListStateFlow.value.filter { it.id in category.trackIds }
     }
 
+    fun getTrackById(trackId: Int): Track {
+        return trackListStateFlow.value.first { it.id == trackId }
+    }
+
 }
