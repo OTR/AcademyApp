@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 class MainViewModel : ViewModel() {
 
     private val _screenStateFlow: MutableStateFlow<ScreenState> = MutableStateFlow(
-        value = ScreenState.DisplayCategories
+        value = ScreenState.DisplayLoginScreen
     )
     val screenStateFlow: StateFlow<ScreenState> = _screenStateFlow.asStateFlow()
 

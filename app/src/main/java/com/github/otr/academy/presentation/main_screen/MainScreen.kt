@@ -7,6 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 import com.github.otr.academy.presentation.categories_screen.CategoriesScreen
+import com.github.otr.academy.presentation.login_screen.LoginScreen
 import com.github.otr.academy.presentation.track_screen.TrackScreen
 
 /**
@@ -24,6 +25,7 @@ fun MainScreen() {
 
     when(currScreenState) {
         ScreenState.Initial -> { Text("Hello world!") }
+        ScreenState.DisplayLoginScreen -> { LoginScreen() }
         ScreenState.DisplayCategories -> { CategoriesScreen() }
         is ScreenState.DisplayTrack -> { TrackScreen(onTrackScreenBackPressedListener) }
     }

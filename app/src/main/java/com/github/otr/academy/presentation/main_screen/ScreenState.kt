@@ -9,6 +9,8 @@ sealed class ScreenState {
 
     object Initial : ScreenState()
 
+    object DisplayLoginScreen: ScreenState()
+
     object DisplayCategories : ScreenState()
 
     class DisplayTrack(val track: Track) : ScreenState()
