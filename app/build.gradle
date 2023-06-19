@@ -59,19 +59,23 @@ dependencies {
     implementation("androidx.compose.material:material:1.4.3")
 
     // viewModel() Composable function
+    // providing a scope that survives configuration changes and being on the back stack
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
 
     // Gson
     implementation("com.google.code.gson:gson:2.10.1")
 
     // Gson Converter for Retrofit2
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit2_version")
 
     // Retrofit2
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:$retrofit2_version")
 
     // Composable FlowRow
-    implementation "com.google.accompanist:accompanist-flowlayout:0.30.1"
+    implementation("com.google.accompanist:accompanist-flowlayout:0.30.1")
+
+    // JetPack Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.6.0")
 
 //    testImplementation 'junit:junit:4.13.2'
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.5'

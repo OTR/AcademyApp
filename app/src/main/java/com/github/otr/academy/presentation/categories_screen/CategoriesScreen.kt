@@ -14,8 +14,9 @@ import com.github.otr.academy.domain.entitiy.Track
 import com.github.otr.academy.presentation.categories_screen.component.CategoriesHeader
 import com.github.otr.academy.presentation.categories_screen.component.category.CategoryChips
 import com.github.otr.academy.presentation.categories_screen.component.track.TrackCard
-import com.github.otr.academy.presentation.main_screen.MainViewModel
 import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
+import com.github.otr.academy.presentation.track_screen.TracksViewModel
+import com.github.otr.academy.presentation.track_screen.TracksViewModelFactory
 
 /**
  * Vertically scrollable component was measured with an infinity maximum height
@@ -31,11 +32,12 @@ import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
 
  */
 @Composable
-fun CategoriesScreen() {
+fun CategoriesScreen(
+    onTrackCardClickListener: (Track) -> Unit
+) {
 
-    val mainViewModel: MainViewModel = viewModel()
     val categoriesViewModel: CategoriesViewModel = viewModel()
-    val tracksViewModel: TracksViewModel = viewModel()
+    val tracksViewModel: TracksViewModel = viewModel(factory = TracksViewModelFactory)
 
     val categoriesState: State<CategoriesState> = categoriesViewModel
         .categoriesFlow
@@ -43,7 +45,6 @@ fun CategoriesScreen() {
     val currCategoriesState: CategoriesState = categoriesState.value
 
     val onCategoryChipClickListener: (Category) -> Unit = categoriesViewModel::changeSelectedCategory
-    val onTrackCardClickListener: (Track) -> Unit = mainViewModel::setScreenStateToDisplayTrack
 
     val selectedCategory: Category? = currCategoriesState.categories.find {
         it.id == currCategoriesState.selectedCategoryId

@@ -4,5 +4,7 @@
     <string name="categories_screen_title">What is your learning goal?</string>
     <string name="categories_screen_sub_title">Explore all tracks</string>
     <string name="categories_screen_paragraph">Find the right one by choosing a specific area of knowledge</string>
+    <string name="login_screen_help_text">Login with:</string>
+    <string name="login_screen_test_account_button">Test account</string>
 
 </resources>
