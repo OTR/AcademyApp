@@ -6,6 +6,8 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
 
+import com.github.otr.academy.presentation.categories_screen.CategoriesScreen
+
 /**
  *
  */
@@ -19,6 +21,7 @@ fun MainScreen() {
 
     when(currScreenState) {
         ScreenState.Initial -> { Text("Hello world!") }
+        ScreenState.DisplayCategories -> { CategoriesScreen() }
     }
 
 }

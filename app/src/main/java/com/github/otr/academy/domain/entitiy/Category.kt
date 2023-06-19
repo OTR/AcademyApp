@@ -1,4 +1,4 @@
-package com.github.otr.academy.domain
+package com.github.otr.academy.domain.entitiy
 
 /**
  *
@@ -7,5 +7,6 @@ data class Category(
     val id: Int,
     val title: String,
     val description: String,
-    val tracks: List<Int>
+    val trackIds: List<Int>,
+    val tracksCount: Int
 )

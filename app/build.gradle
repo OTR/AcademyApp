@@ -18,6 +18,8 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
+        buildConfigField "String", "ACADEMY_HOST", "\"${System.getenv("ACADEMY_HOST")}\""
     }
 
     buildTypes {
@@ -58,6 +60,18 @@ dependencies {
 
     // viewModel() Composable function
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+
+    // Gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    // Gson Converter for Retrofit2
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Retrofit2
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // Composable FlowRow
+    implementation "com.google.accompanist:accompanist-flowlayout:0.30.1"
 
 //    testImplementation 'junit:junit:4.13.2'
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
