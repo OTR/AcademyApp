@@ -2,7 +2,6 @@ package com.github.otr.academy.presentation.categories_screen
 
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -15,6 +14,7 @@ import com.github.otr.academy.domain.entitiy.Track
 import com.github.otr.academy.presentation.categories_screen.component.CategoriesHeader
 import com.github.otr.academy.presentation.categories_screen.component.category.CategoryChips
 import com.github.otr.academy.presentation.categories_screen.component.track.TrackCard
+import com.github.otr.academy.presentation.main_screen.MainViewModel
 import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
 
 /**
@@ -33,6 +33,7 @@ import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
 @Composable
 fun CategoriesScreen() {
 
+    val mainViewModel: MainViewModel = viewModel()
     val categoriesViewModel: CategoriesViewModel = viewModel()
     val tracksViewModel: TracksViewModel = viewModel()
 
@@ -42,6 +43,7 @@ fun CategoriesScreen() {
     val currCategoriesState: CategoriesState = categoriesState.value
 
     val onCategoryChipClickListener: (Category) -> Unit = categoriesViewModel::changeSelectedCategory
+    val onTrackCardClickListener: (Track) -> Unit = mainViewModel::setScreenStateToDisplayTrack
 
     val selectedCategory: Category? = currCategoriesState.categories.find {
         it.id == currCategoriesState.selectedCategoryId
@@ -59,7 +61,10 @@ fun CategoriesScreen() {
         item {CategoriesHeader()}
         item { CategoryChips(currCategoriesState, onCategoryChipClickListener) }
         items(items = selectedTracks, key = { it.id }) {
-            TrackCard(track = it)
+            TrackCard(
+                track = it,
+                onTrackCardClickListener = onTrackCardClickListener
+            )
         }
     }
 
