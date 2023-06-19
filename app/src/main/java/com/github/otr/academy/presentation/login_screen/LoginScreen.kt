@@ -14,20 +14,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 
 import com.github.otr.academy.R
-import com.github.otr.academy.presentation.main_screen.MainViewModel
+import com.github.otr.academy.presentation.navigation.ScreenState
 import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
 
 /**
  *
  */
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    navHostController: NavHostController
+) {
 
-    val mainViewModel: MainViewModel = viewModel()
-
-    val onBtnClickListener: () -> Unit = mainViewModel::setScreenStateToDisplayCategories
+    val onBtnClickListener: () -> Unit = {
+        navHostController.navigate(ScreenState.CategoriesScreen.route)
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
