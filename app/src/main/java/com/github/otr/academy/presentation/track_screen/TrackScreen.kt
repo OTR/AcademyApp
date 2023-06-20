@@ -9,7 +9,7 @@ import com.github.otr.academy.presentation.track_screen.component.TrackAppBar
 import com.github.otr.academy.presentation.track_screen.component.TrackScreenTopLabelsRow
 import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackDescription
 import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackLongDescription
-import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackTitleHeadler
+import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackTitleHeader
 
 /**
  *
@@ -28,7 +28,7 @@ fun TrackScreen(
     ) {
         item { TrackAppBar(onBackPressedListener) }
         item { TrackScreenTopLabelsRow() }
-        item { TrackScreenTrackTitleHeadler(track.title) }
+        item { TrackScreenTrackTitleHeader(track.title) }
         item { TrackScreenTrackDescription(track.description) }
         item { TrackScreenTrackLongDescription(track.longDescription) }
     }

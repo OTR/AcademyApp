@@ -13,6 +13,6 @@ import com.github.otr.academy.presentation.theme.DEFAULT_HORIZONTAL_PADDING
 fun TrackScreenTrackDescription(description: String) {
     Text(
         modifier = Modifier.padding(horizontal = DEFAULT_HORIZONTAL_PADDING * 3),
-        text = description
+        text = description.firstLineIndentedParagraph()
     )
 }

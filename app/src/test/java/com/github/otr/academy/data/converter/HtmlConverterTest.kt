@@ -11,6 +11,10 @@ class HtmlConverterTest {
     @Test
     fun testConverter() {
         val listOfDescriptions = LongDescriptionDataSource.getListOfLongDescriptions()
+        listOfDescriptions.forEach {
+            println(it)
+            println("_________________________________________________________________________")
+        }
         assertEquals(2, 2)
     }
 

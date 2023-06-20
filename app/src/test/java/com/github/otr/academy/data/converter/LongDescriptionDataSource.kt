@@ -15,19 +15,35 @@ object LongDescriptionDataSource {
 
     private const val pathToTracks: String = "/api/tracks.json"
 
-    fun getListOfLongDescriptions(): List<String> {
+    private fun loadRawJson(): String {
         val url: String = URL("http", Config.backendHost, pathToTracks).toExternalForm()
         val data: String = Jsoup
             .connect(url)
             .ignoreContentType(true)
             .execute()
             .body()
+
+        return data
+    }
+
+    private fun getListOfLongDescAsHtml(data: String): List<String> {
         val tracksDTO: TracksDTO = Gson().fromJson(data, TracksDTO::class.java)
         val listOfLongDescriptionsHTML: List<String> = tracksDTO.tracks.map { it.longDescription ?: "" }
-        val listOfLongDescriptionsText: List<String> = listOfLongDescriptionsHTML.map {
-            Jsoup.parse(it).text()
+        return listOfLongDescriptionsHTML
+    }
+
+    private fun parseListOfLongDesc(listOfDescAsHtml: List<String>): List<String> {
+        val listOfLongDescriptionsText: List<String> = listOfDescAsHtml.map {
+            HtmlConverter.convertFromHtmlToText(it)
         }
         return listOfLongDescriptionsText
+    }
+
+    fun getListOfLongDescriptions(): List<String> {
+        val data: String = loadRawJson()
+        val listOfLongDescAsHtml: List<String> = getListOfLongDescAsHtml(data)
+        val listOfLongDescAsText: List<String> = parseListOfLongDesc(listOfLongDescAsHtml)
+        return listOfLongDescAsText
     }
 
 }
