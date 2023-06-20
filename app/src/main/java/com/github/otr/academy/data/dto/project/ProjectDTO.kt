@@ -66,6 +66,19 @@ data class ProjectDTO(
         ) {
             return Project(
                 id = id,
+                title = title,
+                description = description,
+                longDescription = longDescription,
+                environment = environment,
+                language = language,
+                isBeta = isBeta,
+                isTemplateBased = isTemplateBased,
+                useIde = useIde,
+                isPublic = isPublic,
+                isIdeRequired = isIdeRequired,
+                stagesCount = stagesCount,
+                stagesIds = stagesIds,
+                readiness = readiness
             )
         } else {
             throw IllegalArgumentException("Some of ProjectDTO fields are null")

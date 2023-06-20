@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 /**
  *
  */
-object ProjectViewModelFactory : ViewModelProvider.Factory {
+object ProjectsViewModelFactory : ViewModelProvider.Factory {
 
-    private val projectViewModel: ProjectViewModel = ProjectViewModel()
+    private val projectViewModel: ProjectsViewModel = ProjectsViewModel()
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return projectViewModel as T

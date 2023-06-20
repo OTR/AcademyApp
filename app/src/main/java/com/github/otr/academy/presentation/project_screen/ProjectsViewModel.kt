@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 /**
  *
  */
-class ProjectViewModel : ViewModel() {
+class ProjectsViewModel : ViewModel() {
 
     private val repository: ProjectRepository = ProjectRepositoryImpl()
     private val getProjectByIdUseCase = GetProjectByIdUseCase(repository)
