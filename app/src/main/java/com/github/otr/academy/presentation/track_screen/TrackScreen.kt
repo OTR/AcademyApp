@@ -8,6 +8,7 @@ import com.github.otr.academy.domain.entitiy.Track
 import com.github.otr.academy.presentation.track_screen.component.TrackAppBar
 import com.github.otr.academy.presentation.track_screen.component.TrackScreenTopLabelsRow
 import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackDescription
+import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackLongDescription
 import com.github.otr.academy.presentation.track_screen.component.TrackScreenTrackTitleHeadler
 
 /**
@@ -29,7 +30,7 @@ fun TrackScreen(
         item { TrackScreenTopLabelsRow() }
         item { TrackScreenTrackTitleHeadler(track.title) }
         item { TrackScreenTrackDescription(track.description) }
-        item { TrackScreenTrackDescription(track.longDescription) }
+        item { TrackScreenTrackLongDescription(track.longDescription) }
     }
 
 }

@@ -1,5 +1,6 @@
 package com.github.otr.academy.data.dto.tracks
 
+import com.github.otr.academy.data.converter.HtmlConverter
 import com.github.otr.academy.domain.entitiy.Track
 import com.google.gson.annotations.SerializedName
 
@@ -59,11 +60,13 @@ data class TrackDTO(
             && secondsToComplete != null && topicsCount != null && cover != null
             && capstoneTopicsCount != null
         ) {
+            val parsedLongDesc: String = HtmlConverter.convertFromHtmlToText(longDescription)
+
             return Track(
                 id = id,
                 title = title,
                 description = description,
-                longDescription = longDescription,
+                longDescription = parsedLongDesc,
                 isBeta = isBeta,
                 isFree = isFree,
                 easyProjects = projectsByLevel.easy,
