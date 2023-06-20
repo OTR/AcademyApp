@@ -1,7 +1,7 @@
 package com.github.otr.academy.data.converter
 
 import com.github.otr.academy.data.config.Config
-import com.github.otr.academy.data.dto.tracks.TracksDTO
+import com.github.otr.academy.data.dto.tracks.TracksContainerDTO
 
 import com.google.gson.Gson
 import org.jsoup.Jsoup
@@ -27,7 +27,7 @@ object LongDescriptionDataSource {
     }
 
     private fun getListOfLongDescAsHtml(data: String): List<String> {
-        val tracksDTO: TracksDTO = Gson().fromJson(data, TracksDTO::class.java)
+        val tracksDTO: TracksContainerDTO = Gson().fromJson(data, TracksContainerDTO::class.java)
         val listOfLongDescriptionsHTML: List<String> = tracksDTO.tracks.map { it.longDescription ?: "" }
         return listOfLongDescriptionsHTML
     }
