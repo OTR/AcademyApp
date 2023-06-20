@@ -13,7 +13,8 @@ object HtmlConverter {
 
     fun convertFromHtmlToText(sourceHtml: String): String {
         val document: Document = Jsoup.parse(sourceHtml)
-        val divElement: Element = document.selectFirst("div") ?: throw Exception("")
+        val divElement: Element = document.selectFirst("div")
+            ?: throw Exception("FIXME: `div` is not the first element")
         val textNodes: MutableList<String> = mutableListOf()
         divElement.traverse { node, _ ->
             if (node is TextNode && node.text().trim().isNotBlank()) {
@@ -28,6 +29,11 @@ object HtmlConverter {
         }
 
         return textNodes.joinToString("\n\n")
+    }
+
+    fun dummyConvertToText(sourceHtml: String): String {
+        val document: Document = Jsoup.parse(sourceHtml)
+        return document.text()
     }
 
 }
