@@ -17,7 +17,19 @@ val Typography = Typography(
     h2 = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Bold,
+        fontSize = 28.sp
+    ),
+
+    h3 = TextStyle(
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Bold,
         fontSize = 24.sp
+    ),
+
+    h4 = TextStyle(
+        fontFamily = FontFamily.SansSerif,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp
     ),
 
     body1 = TextStyle(

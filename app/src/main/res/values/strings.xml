@@ -6,5 +6,8 @@
     <string name="categories_screen_paragraph">Find the right one by choosing a specific area of knowledge</string>
     <string name="login_screen_help_text">Login with:</string>
     <string name="login_screen_test_account_button">Test account</string>
+    <string name="track_screen_long_desc_title">What you\'ll do:</string>
+    <string name="track_screen_capstone_projects_title">You will be able to complete these projects at the end of the track</string>
+    <string name="track_screen_capstone_projects_sub_title">Graduate projects contain the core topics for this track</string>
 
 </resources>
