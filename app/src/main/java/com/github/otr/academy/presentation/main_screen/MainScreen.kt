@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.github.otr.academy.presentation.AcademyApplication
 
 import com.github.otr.academy.presentation.navigation.AppNavGraph
 import com.github.otr.academy.presentation.project_screen.ProjectsViewModelFactory
