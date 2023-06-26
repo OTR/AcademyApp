@@ -21,11 +21,12 @@ import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
  */
 @Composable
 fun LoginScreen(
-    onBtnClickListener: () -> Unit
+    onBtnClickListener: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -35,7 +36,9 @@ fun LoginScreen(
         )
         Spacer(modifier = Modifier.height(DEFAULT_VERTICAL_PADDING * 4))
         Button(onClick = onBtnClickListener) {
-            Text(stringResource(R.string.login_screen_test_account_button))
+            Text(
+                text = stringResource(R.string.login_screen_test_account_button)
+            )
         }
     }
 

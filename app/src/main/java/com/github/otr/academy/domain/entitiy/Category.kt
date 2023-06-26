@@ -2,7 +2,6 @@ package com.github.otr.academy.domain.entitiy
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 /**
@@ -12,19 +11,20 @@ import androidx.room.PrimaryKey
 data class Category(
 
     @PrimaryKey
-    @ColumnInfo(name = "category_id")
+    @ColumnInfo(name = "id")
     val id: Int,
 
-    @ColumnInfo(name = "category_title")
+    @ColumnInfo(name = "title")
     val title: String,
 
-    @ColumnInfo(name = "category_description")
+    @ColumnInfo(name = "description")
     val description: String,
 
-    @Ignore
+    // FIXME: Cannot figure out how to save this field into database.
+    //  You can consider adding a type converter for it.
     val trackIds: List<Int>,
 
-    @ColumnInfo // TODO: is this column really needed?
+    @ColumnInfo(name = "tracks_count") // TODO: is this column really needed?
     val tracksCount: Int
 
 )
