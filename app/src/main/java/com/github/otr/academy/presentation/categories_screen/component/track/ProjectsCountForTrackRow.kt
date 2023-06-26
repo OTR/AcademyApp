@@ -14,12 +14,14 @@ import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.github.otr.academy.R
 
+import com.github.otr.academy.R
 import com.github.otr.academy.domain.entitiy.Track
 import com.github.otr.academy.presentation.theme.DEFAULT_HORIZONTAL_PADDING
 
 import kotlin.math.roundToInt
+
+private const val SECONDS_IN_HOUR: Int = 3600
 
 /**
  *
@@ -32,7 +34,7 @@ fun ProjectsCountForTrackRow(
 
     val projects: Int = track.projects.size
     val secondsToComplete: Double = track.secondsToComplete
-    val hoursToComplete: Int = (secondsToComplete / 60.0 / 60.0).roundToInt()
+    val hoursToComplete: Int = (secondsToComplete / SECONDS_IN_HOUR).roundToInt()
 
     Row(
         modifier = modifier.fillMaxWidth(),
@@ -45,14 +47,14 @@ fun ProjectsCountForTrackRow(
                 modifier = Modifier.padding(end = DEFAULT_HORIZONTAL_PADDING),
                 imageVector = Icons.Outlined.ShoppingCart,
                 contentDescription = stringResource(
-                    R.string.projects_count_for_track_icon_content_description
+                    R.string.categories_screen_projects_count_icon_content_description
                 ),
                 tint = MaterialTheme.colors.primaryVariant,
             )
             Text(
                 color = MaterialTheme.colors.primaryVariant,
-                text = projects.toString() + stringResource(
-                    R.string.projects_count_for_track_row_text_postfix
+                text = "$projects " + stringResource(
+                    R.string.categories_screen_projects_count_text_postfix
                 ),
                 style = MaterialTheme.typography.body2
             )
@@ -67,14 +69,14 @@ fun ProjectsCountForTrackRow(
                 modifier = Modifier.padding(end = DEFAULT_HORIZONTAL_PADDING),
                 imageVector = Icons.Outlined.DateRange,
                 contentDescription = stringResource(
-                    R.string.projects_count_for_track_row_date_icon_content_description
+                    R.string.categories_screen_projects_count_date_icon_content_description
                 ),
                 tint = MaterialTheme.colors.primaryVariant,
             )
             Text(
                 color = MaterialTheme.colors.primaryVariant,
-                text = hoursToComplete.toString() + stringResource(
-                    R.string.projects_count_for_track_row_take_hours_postfix
+                text = "$hoursToComplete " + stringResource(
+                    R.string.categories_screen_projects_count_take_hours_postfix
                 ),
                 style = MaterialTheme.typography.body2
             )

@@ -31,7 +31,7 @@ class TracksViewModel : ViewModel() {
     val trackListStateFlow: StateFlow<List<Track>> = _trackListStateFlow.asStateFlow()
 
     init {
-        Log.d("LOG", "A NEW TRACKS VIEW MODEL CREATED")
+        Log.d("LOG", "A NEW TRACKS VIEW MODEL CREATED") // TODO: remove me
         viewModelScope.launch {
             val trackList: List<Track> = getAllTracks()
             _trackListStateFlow.emit(value = trackList)
@@ -53,7 +53,8 @@ class TracksViewModel : ViewModel() {
 
 
     override fun onCleared() {
-        Log.d("LOG", "View Model Destroyed")
+        Log.d("LOG", "View Model Destroyed") // TODO: remove me
         super.onCleared()
     }
+
 }

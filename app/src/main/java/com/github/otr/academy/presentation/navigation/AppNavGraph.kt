@@ -37,8 +37,8 @@ fun AppNavGraph(
         composable(Screen.Track.route) {
             it.arguments?.getString(Screen.TRACK_SCREEN_ID_KEY)?.let { key: String ->
                 val trackId: Int = key.toInt()
-                Log.d("LOG", key)
-                TrackScreen(trackId, navHostController::navigateToCategoriesScreen)
+                Log.d("LOG", key) // TODO: remove me
+                TrackScreen(trackId) { navHostController.navigateToCategoriesScreen() }
             }
         }
 

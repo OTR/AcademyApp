@@ -39,7 +39,10 @@ private val LightColorPalette = lightColors(
  * https://m2.material.io/design/color/the-color-system.html#color-theme-creation
  */
 @Composable
-fun AcademyAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun AcademyAppTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {

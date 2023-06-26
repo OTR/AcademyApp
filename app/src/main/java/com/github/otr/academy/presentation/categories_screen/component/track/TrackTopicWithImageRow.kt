@@ -33,7 +33,7 @@ fun TrackTopicWithImageRow(
             modifier = Modifier.padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
             imageVector = Icons.Outlined.CheckCircle,
             contentDescription = stringResource(
-                R.string.track_topic_with_image_row_content_description
+                R.string.categories_screen_track_icon_content_description
             ),
             tint = MaterialTheme.colors.onSecondary
         )
