@@ -8,7 +8,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 
 import com.github.otr.academy.domain.entitiy.Category
 import com.github.otr.academy.presentation.theme.CATEGORY_CHIP_TRAILING_TEXT_PADDING_VALUES
@@ -26,14 +25,15 @@ import com.github.otr.academy.presentation.theme.getTrailingTextColor
 fun CategoryChip(
     category: Category,
     onClickListener: (Category) -> Unit,
-    selected: Boolean
+    selected: Boolean,
+    modifier: Modifier = Modifier
 ) {
 
     FilterChip(
-        onClick = { onClickListener(category) },
-        colors = getCategoryChipColors(),
-        border = getCategoryChipBorder(selected),
         selected = selected,
+        onClick = { onClickListener(category) },
+        border = getCategoryChipBorder(selected),
+        colors = getCategoryChipColors(),
         trailingIcon = {
             Text(
                 color = getTrailingTextColor(selected),
@@ -46,7 +46,8 @@ fun CategoryChip(
                 ,
                 text = category.tracksCount.toString()
             )
-        }
+        },
+        modifier = modifier
     ) {
         Text(text = category.title)
     }

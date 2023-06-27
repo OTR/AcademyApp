@@ -30,7 +30,7 @@ data class CategoriesDTO(
         ) {
             return Category(
                 id = id,
-                title = title,
+                title =  title,
                 description = description,
                 trackIds = tracks,
                 tracksCount = tracks.size

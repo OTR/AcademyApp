@@ -14,9 +14,12 @@ import com.github.otr.academy.presentation.theme.DEFAULT_HORIZONTAL_PADDING
  *
  */
 @Composable
-fun TrackDescriptionRow(track: Track) {
+fun TrackDescriptionRow(
+    track: Track,
+    modifier: Modifier = Modifier
+) {
     Text(
-        modifier = Modifier.padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
+        modifier = modifier.padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
         textAlign = TextAlign.Justify,
         text = track.description,
         style = MaterialTheme.typography.body1

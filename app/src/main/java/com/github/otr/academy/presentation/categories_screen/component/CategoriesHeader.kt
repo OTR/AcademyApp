@@ -17,10 +17,12 @@ import com.github.otr.academy.presentation.theme.H2_TEXT_PADDING_VALUES
  *
  */
 @Composable
-fun CategoriesHeader() {
+fun CategoriesHeader(
+    modifier: Modifier = Modifier
+) {
 
     Column(
-        modifier = Modifier
+        modifier = modifier
     ) {
         Text(
             modifier = Modifier.padding(H1_TEXT_PADDING_VALUES),

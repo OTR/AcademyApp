@@ -20,11 +20,12 @@ import com.github.otr.academy.presentation.theme.getCategoryChipBorder
 @Composable
 fun TrackCard(
     track: Track,
-    onTrackCardClickListener: (Track) -> Unit
+    onTrackCardClickListener: (Track) -> Unit,
+    modifier: Modifier = Modifier
 ) {
 
     Card(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(all = DEFAULT_HORIZONTAL_PADDING * 2)
             .clickable { onTrackCardClickListener(track) }

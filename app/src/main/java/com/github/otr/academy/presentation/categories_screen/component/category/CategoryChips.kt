@@ -20,14 +20,15 @@ import com.github.otr.academy.presentation.theme.MAX_CATEGORY_CHIPS_IN_EACH_ROW
 @Composable
 fun CategoryChips(
     categoriesState: CategoriesState,
-    onCategoryChipClickListener: (Category) -> Unit
+    onCategoryChipClickListener: (Category) -> Unit,
+    modifier: Modifier = Modifier
 ) {
 
     val categories: List<Category> = categoriesState.categories
     val selectedCategoryId: Int = categoriesState.selectedCategoryId
 
     FlowRow(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(CATEGORY_CHIPS_FLOW_ROW_PADDING_VALUES),
         horizontalArrangement = Arrangement.SpaceEvenly,

@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 import com.github.otr.academy.domain.entitiy.Category
@@ -33,6 +34,7 @@ import com.github.otr.academy.presentation.track_screen.TracksViewModelFactory
  */
 @Composable
 fun CategoriesScreen(
+    modifier: Modifier = Modifier,
     onTrackCardClickListener: (Track) -> Unit
 ) {
 
@@ -54,10 +56,11 @@ fun CategoriesScreen(
         tracksViewModel.getTracksByCategory(it)
     } ?: emptyList()
 
-    Log.d("LOG", "Recomposition")
+    Log.d("LOG", "Recomposition") // TODO: Remove me
 
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(DEFAULT_VERTICAL_PADDING * 2)
+        verticalArrangement = Arrangement.spacedBy(DEFAULT_VERTICAL_PADDING * 2),
+        modifier = modifier
     ) {
         item {CategoriesHeader()}
         item { CategoryChips(currCategoriesState, onCategoryChipClickListener) }

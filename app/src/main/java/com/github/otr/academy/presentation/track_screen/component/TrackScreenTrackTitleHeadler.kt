@@ -5,22 +5,22 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.github.otr.academy.presentation.theme.DEFAULT_HORIZONTAL_PADDING
-import com.github.otr.academy.presentation.theme.DEFAULT_VERTICAL_PADDING
+
+import com.github.otr.academy.presentation.theme.TRACK_SCREEN_TRACK_TITLE_PADDING_VALUES
 
 /**
  *
  */
 @Composable
 fun TrackScreenTrackTitleHeader(
-    title: String
+    title: String,
+    modifier: Modifier = Modifier
 ) {
+
     Text(
-        modifier = Modifier.padding(
-            start = DEFAULT_HORIZONTAL_PADDING * 3,
-            bottom = DEFAULT_VERTICAL_PADDING * 2
-        ),
+        modifier = modifier.padding(TRACK_SCREEN_TRACK_TITLE_PADDING_VALUES),
         style = MaterialTheme.typography.h1,
         text = title
     )
+
 }

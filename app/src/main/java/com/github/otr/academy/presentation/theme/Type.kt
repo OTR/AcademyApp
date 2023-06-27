@@ -4,38 +4,47 @@ import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
-// Set of Material typography styles to start with
+private val H1_TEXT_FONT_SIZE: TextUnit = 32.sp
+private val H2_TEXT_FONT_SIZE: TextUnit = 28.sp
+private val H3_TEXT_FONT_SIZE: TextUnit = 24.sp
+private val H4_TEXT_FONT_SIZE: TextUnit = 20.sp
+private val BODY1_TEXT_FONT_SIZE: TextUnit = 16.sp
+
+/**
+ * Set of Material typography styles to start with
+ */
 val Typography = Typography(
     h1 = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Bold,
-        fontSize = 32.sp
+        fontSize = H1_TEXT_FONT_SIZE
     ),
 
     h2 = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Bold,
-        fontSize = 28.sp
+        fontSize = H2_TEXT_FONT_SIZE
     ),
 
     h3 = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Bold,
-        fontSize = 24.sp
+        fontSize = H3_TEXT_FONT_SIZE
     ),
 
     h4 = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.Bold,
-        fontSize = 20.sp
+        fontSize = H4_TEXT_FONT_SIZE
     ),
 
     body1 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = BODY1_TEXT_FONT_SIZE
     )
     /* Other default text styles to override
     button = TextStyle(

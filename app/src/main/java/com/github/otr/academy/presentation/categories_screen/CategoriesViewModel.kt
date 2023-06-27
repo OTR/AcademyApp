@@ -27,12 +27,12 @@ class CategoriesViewModel : ViewModel() {
     val categoriesFlow: StateFlow<CategoriesState> = _categoriesFlow.asStateFlow()
 
     init {
-       viewModelScope.launch {
-           val categories: List<Category> = getCategories()
-           val stateToEmit: CategoriesState = CategoriesState.Categories(
-               categories = categories,
-               selectedCategoryId = CategoriesState.ALL_TRACKS_CATEGORY_ID
-           )
+        viewModelScope.launch {
+            val categories: List<Category> = getCategories()
+            val stateToEmit: CategoriesState = CategoriesState.Categories(
+                categories = categories,
+                selectedCategoryId = CategoriesState.ALL_TRACKS_CATEGORY_ID
+            )
             _categoriesFlow.emit(value = stateToEmit)
         }
     }
@@ -44,7 +44,9 @@ class CategoriesViewModel : ViewModel() {
 
     fun changeSelectedCategory(category: Category) {
         val categories = categoriesFlow.value.categories
-        val selectedCategoryId = categories.find { it.id == category.id }?.id
+        val selectedCategoryId = categories.find {
+            it.id == category.id
+        }?.id
             ?: CategoriesState.ALL_TRACKS_CATEGORY_ID
 
         _categoriesFlow.value =

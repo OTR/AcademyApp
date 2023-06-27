@@ -1,13 +1,28 @@
 <resources>
     <string name="app_name">AcademyApp</string>
-    
+
+    <!--  String Constants for Categories Screen  -->
     <string name="categories_screen_title">What is your learning goal?</string>
     <string name="categories_screen_sub_title">Explore all tracks</string>
     <string name="categories_screen_paragraph">Find the right one by choosing a specific area of knowledge</string>
+    <string name="categories_screen_track_icon_content_description">Image for a learning track</string>
+
+    <!--  String Constants for Login Screen  -->
     <string name="login_screen_help_text">Login with:</string>
     <string name="login_screen_test_account_button">Test account</string>
+
+    <!--  String Constants for Track Screen  -->
     <string name="track_screen_long_desc_title">What you\'ll do:</string>
     <string name="track_screen_capstone_projects_title">You will be able to complete these projects at the end of the track</string>
     <string name="track_screen_capstone_projects_sub_title">Graduate projects contain the core topics for this track</string>
+    <string name="track_screen_app_bar_icon_content_description">Go on back screen Icon Button</string>
+    <string name="track_screen_app_bar_text">Back To Selecting Track</string>
+    <string name="track_screen_top_label_track_text">Track</string>
+    <string name="track_screen_top_label_beta_text">Beta</string>
+
+    <string name="categories_screen_projects_count_icon_content_description">Icon that represents amount of projects for the track</string>
+    <string name="categories_screen_projects_count_text_postfix">projects</string>
+    <string name="categories_screen_projects_count_date_icon_content_description">Date Range Icon</string>
+    <string name="categories_screen_projects_count_take_hours_postfix">hours</string>
 
 </resources>
