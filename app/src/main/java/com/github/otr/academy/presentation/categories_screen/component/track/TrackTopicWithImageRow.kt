@@ -5,10 +5,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.github.otr.academy.R
 
@@ -31,7 +30,7 @@ fun TrackTopicWithImageRow(
     ) {
         Icon(
             modifier = Modifier.padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
-            imageVector = Icons.Outlined.CheckCircle,
+            painter = painterResource(id = R.drawable.jetpack_compose),
             contentDescription = stringResource(
                 R.string.categories_screen_track_icon_content_description
             ),
