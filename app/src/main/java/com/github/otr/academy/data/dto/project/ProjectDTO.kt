@@ -45,7 +45,7 @@ data class ProjectDTO(
     val stagesCount: Int?,
 
     @SerializedName("stages_ids")
-    val stagesIds: ArrayList<Int> = arrayListOf(),
+    val stagesIds: ArrayList<Int>,
 
     @SerializedName("readiness")
     val readiness: Int?,

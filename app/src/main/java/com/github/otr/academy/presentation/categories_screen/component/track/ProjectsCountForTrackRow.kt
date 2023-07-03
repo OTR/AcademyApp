@@ -40,9 +40,11 @@ fun ProjectsCountForTrackRow(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
+
         Row(
             modifier = Modifier
         ) {
+
             Icon(
                 modifier = Modifier.padding(end = DEFAULT_HORIZONTAL_PADDING),
                 imageVector = Icons.Outlined.ShoppingCart,
@@ -51,6 +53,7 @@ fun ProjectsCountForTrackRow(
                 ),
                 tint = MaterialTheme.colors.primaryVariant,
             )
+
             Text(
                 color = MaterialTheme.colors.primaryVariant,
                 text = "$projects " + stringResource(
@@ -58,13 +61,17 @@ fun ProjectsCountForTrackRow(
                 ),
                 style = MaterialTheme.typography.body2
             )
+
         }
+
         Spacer(
             modifier = Modifier.padding(DEFAULT_HORIZONTAL_PADDING)
         )
+
         Row(
             modifier = Modifier
         ) {
+
             Icon(
                 modifier = Modifier.padding(end = DEFAULT_HORIZONTAL_PADDING),
                 imageVector = Icons.Outlined.DateRange,
@@ -73,6 +80,7 @@ fun ProjectsCountForTrackRow(
                 ),
                 tint = MaterialTheme.colors.primaryVariant,
             )
+
             Text(
                 color = MaterialTheme.colors.primaryVariant,
                 text = "$hoursToComplete " + stringResource(
@@ -80,6 +88,7 @@ fun ProjectsCountForTrackRow(
                 ),
                 style = MaterialTheme.typography.body2
             )
+
         }
 
     }

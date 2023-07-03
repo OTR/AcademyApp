@@ -2,6 +2,7 @@ package com.github.otr.academy.data.dto.tracks
 
 import com.github.otr.academy.data.converter.HtmlConverter
 import com.github.otr.academy.domain.entitiy.Track
+
 import com.google.gson.annotations.SerializedName
 
 /**

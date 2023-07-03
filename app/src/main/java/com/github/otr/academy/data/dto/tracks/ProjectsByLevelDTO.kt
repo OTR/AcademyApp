@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName
  *
  */
 data class ProjectsByLevelDTO(
+
     @SerializedName("medium")
     val medium: ArrayList<Int> = arrayListOf(),
 
@@ -17,4 +18,5 @@ data class ProjectsByLevelDTO(
 
     @SerializedName("easy")
     val easy: ArrayList<Int> = arrayListOf()
+
 )

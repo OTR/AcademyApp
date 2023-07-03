@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import com.github.otr.academy.R
 
+import com.github.otr.academy.R
 import com.github.otr.academy.domain.entitiy.Track
 import com.github.otr.academy.presentation.theme.DEFAULT_HORIZONTAL_PADDING
 
@@ -28,6 +28,7 @@ fun TrackTopicWithImageRow(
     Row(
         modifier = modifier.padding(all = DEFAULT_HORIZONTAL_PADDING)
     ) {
+
         Icon(
             modifier = Modifier.padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
             painter = painterResource(id = R.drawable.jetpack_compose),
@@ -36,10 +37,12 @@ fun TrackTopicWithImageRow(
             ),
             tint = MaterialTheme.colors.onSecondary
         )
+
         Text(
             style = MaterialTheme.typography.h2,
             text = title
         )
+
     }
 
 }

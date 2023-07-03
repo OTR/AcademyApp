@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
  */
 data class ProjectContainerDTO(
 
-    @SerializedName("projects" )
-    val projects : ArrayList<ProjectDTO> = arrayListOf()
+    @SerializedName("projects")
+    val projects: ArrayList<ProjectDTO>
 
 )

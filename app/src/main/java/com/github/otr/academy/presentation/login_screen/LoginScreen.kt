@@ -30,16 +30,22 @@ fun LoginScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Text(
             style = MaterialTheme.typography.h1,
             text = stringResource(R.string.login_screen_help_text)
         )
+
         Spacer(modifier = Modifier.height(DEFAULT_VERTICAL_PADDING * 4))
+
         Button(onClick = onBtnClickListener) {
+
             Text(
                 text = stringResource(R.string.login_screen_test_account_button)
             )
+
         }
+
     }
 
 }

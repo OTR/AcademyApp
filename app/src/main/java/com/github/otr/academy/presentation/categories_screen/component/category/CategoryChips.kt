@@ -36,11 +36,13 @@ fun CategoryChips(
     ) {
         categories.forEach {
             val selected: Boolean = it.id == selectedCategoryId
+
             CategoryChip(
                 category = it,
                 selected = selected,
                 onClickListener = onCategoryChipClickListener
             )
+
         }
     }
 

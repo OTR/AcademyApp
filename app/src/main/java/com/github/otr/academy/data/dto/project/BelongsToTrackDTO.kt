@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 /**
  * TODO:
  */
-data class BelongsToTrackDTO (
+data class BelongsToTrackDTO(
 
     @SerializedName("66")
-    val asKind : BelongsToTrackAsKindDTO?
+    val asKind: BelongsToTrackAsKindDTO?
 
 )

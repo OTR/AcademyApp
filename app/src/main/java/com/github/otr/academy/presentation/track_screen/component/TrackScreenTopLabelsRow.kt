@@ -32,9 +32,11 @@ fun TrackScreenTopLabelsRow(
             onClick = {},
             enabled = false,
         ) {
+
             Text(
                 text = stringResource(R.string.track_screen_top_label_track_text)
             )
+
         }
 
         Spacer(modifier = Modifier.width(TRACK_SCREEN_SPACER_BETWEEN_LABELS_WIDTH))
@@ -47,9 +49,11 @@ fun TrackScreenTopLabelsRow(
                 disabledBackgroundColor = MaterialTheme.colors.secondary
             )
         ) {
+
             Text(
                 text = stringResource(R.string.track_screen_top_label_beta_text)
             )
+
         }
 
     }

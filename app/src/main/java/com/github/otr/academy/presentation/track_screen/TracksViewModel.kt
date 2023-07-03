@@ -51,7 +51,6 @@ class TracksViewModel : ViewModel() {
         return trackListStateFlow.value.first { it.id == trackId }
     }
 
-
     override fun onCleared() {
         Log.d("LOG", "View Model Destroyed") // TODO: remove me
         super.onCleared()
