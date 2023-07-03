@@ -1,4 +1,4 @@
-package com.github.otr.academy.data.dto.tracks
+package com.github.otr.academy.data.dto.track
 
 import com.google.gson.annotations.SerializedName
 

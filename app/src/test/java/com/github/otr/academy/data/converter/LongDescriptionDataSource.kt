@@ -1,7 +1,7 @@
 package com.github.otr.academy.data.converter
 
 import com.github.otr.academy.data.config.Config
-import com.github.otr.academy.data.dto.tracks.TracksContainerDTO
+import com.github.otr.academy.data.dto.track.TracksContainerDTO
 
 import com.google.gson.Gson
 import org.jsoup.Jsoup

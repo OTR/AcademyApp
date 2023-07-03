@@ -1,8 +1,8 @@
 package com.github.otr.academy.data.network
 
-import com.github.otr.academy.data.dto.categories.CategoriesContainerDTO
-import com.github.otr.academy.data.dto.project.ProjectContainerDTO
-import com.github.otr.academy.data.dto.tracks.TracksContainerDTO
+import com.github.otr.academy.data.dto.category.CategoriesContainerDTO
+import com.github.otr.academy.data.dto.project.ProjectsContainerDTO
+import com.github.otr.academy.data.dto.track.TracksContainerDTO
 
 import retrofit2.Response
 import retrofit2.http.GET
@@ -22,6 +22,6 @@ interface ApiEndpoints {
     @GET("api/projects/{project_id}.json")
     suspend fun getProjectById(
         @Path("project_id") projectId: Int
-    ): Response<ProjectContainerDTO>
+    ): Response<ProjectsContainerDTO>
 
 }

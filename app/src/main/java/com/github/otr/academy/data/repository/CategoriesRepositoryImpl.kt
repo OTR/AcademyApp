@@ -1,6 +1,9 @@
 package com.github.otr.academy.data.repository
 
-import com.github.otr.academy.data.dto.categories.CategoriesContainerDTO
+import com.github.otr.academy.data.dto.category.CategoriesContainerDTO
+import com.github.otr.academy.data.dto.category.CategoryDTO
+import com.github.otr.academy.data.mapper.CategoryMapper
+import com.github.otr.academy.data.mapper.GenericMapper
 import com.github.otr.academy.data.network.ApiFactory
 import com.github.otr.academy.data.network.ApiEndpoints
 import com.github.otr.academy.domain.entitiy.Category
@@ -11,7 +14,9 @@ import retrofit2.Response
 /**
  *
  */
-class CategoriesRepositoryImpl: CategoriesRepository {
+class CategoriesRepositoryImpl constructor(
+    private val mapper: GenericMapper<CategoryDTO, Category> = CategoryMapper() // TODO: Replace with Inject
+): CategoriesRepository {
 
     private val apiClient: ApiEndpoints = ApiFactory.client
 
@@ -19,7 +24,9 @@ class CategoriesRepositoryImpl: CategoriesRepository {
         apiClient.getCategories().let { response: Response<CategoriesContainerDTO> ->
             val body = response.body()
             if (response.isSuccessful && body != null) {
-                return body.categories.map { it.mapToCategory() }
+                return body.categories.map {dto: CategoryDTO ->
+                    mapper.mapDtoToDomainEntity(dto)
+                }
             } else {
                 throw RuntimeException("Response code != 200 or Couldn't parse JSON object")
             }
