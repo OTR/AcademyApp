@@ -30,7 +30,6 @@ import com.github.otr.academy.presentation.track_screen.TracksViewModelFactory
  * you applied Modifier.wrapContentSize(unbounded = true)
  * or wrote a custom layout. Please try to remove the source
  * of infinite constraints in the hierarchy above the scrolling container.
-
  */
 @Composable
 fun CategoriesScreen(
@@ -62,6 +61,7 @@ fun CategoriesScreen(
         verticalArrangement = Arrangement.spacedBy(DEFAULT_VERTICAL_PADDING * 2),
         modifier = modifier
     ) {
+
         item {CategoriesHeader()}
         item { CategoryChips(currCategoriesState, onCategoryChipClickListener) }
         items(items = selectedTracks, key = { it.id }) {
@@ -70,6 +70,7 @@ fun CategoriesScreen(
                 onTrackCardClickListener = onTrackCardClickListener
             )
         }
+
     }
 
 }

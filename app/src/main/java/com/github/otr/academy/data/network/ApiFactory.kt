@@ -1,10 +1,12 @@
 package com.github.otr.academy.data.network
 
 import com.github.otr.academy.data.config.Config
+
 import com.google.gson.GsonBuilder
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+
 import java.net.URL
 
 /**

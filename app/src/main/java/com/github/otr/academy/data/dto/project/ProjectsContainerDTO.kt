@@ -3,11 +3,11 @@ package com.github.otr.academy.data.dto.project
 import com.google.gson.annotations.SerializedName
 
 /**
- * TODO:
+ *
  */
-data class BelongsToTrackDTO(
+data class ProjectsContainerDTO(
 
-    @SerializedName("66")
-    val asKind: BelongsToTrackAsKindDTO?
+    @SerializedName("projects")
+    val projects: ArrayList<ProjectDTO>
 
 )

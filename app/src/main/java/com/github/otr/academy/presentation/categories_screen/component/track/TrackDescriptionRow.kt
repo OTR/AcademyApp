@@ -18,10 +18,12 @@ fun TrackDescriptionRow(
     track: Track,
     modifier: Modifier = Modifier
 ) {
+
     Text(
         modifier = modifier.padding(all = DEFAULT_HORIZONTAL_PADDING * 2),
         textAlign = TextAlign.Justify,
         text = track.description,
         style = MaterialTheme.typography.body1
     )
+
 }

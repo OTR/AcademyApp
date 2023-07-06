@@ -24,21 +24,25 @@ fun CategoriesHeader(
     Column(
         modifier = modifier
     ) {
+
         Text(
             modifier = Modifier.padding(H1_TEXT_PADDING_VALUES),
             text = stringResource(id = R.string.categories_screen_title),
             style = MaterialTheme.typography.h1
         )
+
         Text(
             modifier = Modifier.padding(H2_TEXT_PADDING_VALUES),
             text = stringResource(id = R.string.categories_screen_sub_title),
             style = MaterialTheme.typography.h2
         )
+
         Text(
             modifier = Modifier.padding(BODY1_TEXT_PADDING_VALUES),
             text = stringResource(id = R.string.categories_screen_paragraph),
             style = MaterialTheme.typography.body1
         )
+
     }
 
 }

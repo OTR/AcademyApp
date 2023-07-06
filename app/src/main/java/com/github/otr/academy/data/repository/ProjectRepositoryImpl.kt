@@ -1,6 +1,9 @@
 package com.github.otr.academy.data.repository
 
-import com.github.otr.academy.data.dto.project.ProjectContainerDTO
+import com.github.otr.academy.data.dto.project.ProjectsContainerDTO
+import com.github.otr.academy.data.dto.project.ProjectDTO
+import com.github.otr.academy.data.mapper.GenericMapper
+import com.github.otr.academy.data.mapper.ProjectMapper
 import com.github.otr.academy.data.network.ApiEndpoints
 import com.github.otr.academy.data.network.ApiFactory
 import com.github.otr.academy.domain.entitiy.Project
@@ -11,15 +14,19 @@ import retrofit2.Response
 /**
  *
  */
-class ProjectRepositoryImpl : ProjectRepository {
+class ProjectRepositoryImpl(
+    private val mapper: GenericMapper<ProjectDTO, Project> = ProjectMapper() // TODO: Replace with Inject
+) : ProjectRepository {
 
     private val apiClient: ApiEndpoints = ApiFactory.client
 
     override suspend fun getProjectById(projectId: Int): Project {
-        apiClient.getProjectById(projectId).let { response: Response<ProjectContainerDTO> ->
-            val body: ProjectContainerDTO? = response.body()
+        apiClient.getProjectById(projectId).let { response: Response<ProjectsContainerDTO> ->
+            val body: ProjectsContainerDTO? = response.body()
             if (response.isSuccessful && body != null) {
-                return body.projects.first { it.id == projectId }.mapToProject()
+                val projectDTO: ProjectDTO =  body.projects.first { it.id == projectId }
+                val project: Project = mapper.mapDtoToDomainEntity(projectDTO)
+                return  project
             } else {
                 throw RuntimeException("Response code 200 or couldn't parse JSON")
             }

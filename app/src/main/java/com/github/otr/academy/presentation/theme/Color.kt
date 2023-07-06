@@ -56,6 +56,9 @@ fun getTrailingTextColor(selected: Boolean): Color {
     }
 }
 
+/**
+ *
+ */
 @Composable
 fun getTrailingTextBackgroundColor(selected: Boolean): Color {
     return if (selected) {

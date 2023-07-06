@@ -34,6 +34,7 @@ fun TrackCard(
         border = getCategoryChipBorder(selected = false),
         elevation = 8.dp
     ) {
+
         Column(
             modifier = Modifier
         ) {
@@ -43,6 +44,7 @@ fun TrackCard(
 //            TrackCompletedTopicsRow() TODO: these UI elements displayed only for logged user
 //            TrackAppliedCoreTopicsRow()
         }
+
     }
 
 }

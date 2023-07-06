@@ -1,6 +1,7 @@
 package com.github.otr.academy.data.network
 
 import okhttp3.OkHttpClient
+
 import java.util.concurrent.TimeUnit
 
 /**
