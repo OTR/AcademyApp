@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.internal.KaptGenerateStubsTask
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -93,4 +95,10 @@ dependencies {
 //    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
 //    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
 //    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+}
+
+tasks.withType(KaptGenerateStubsTask).configureEach {
+    configure {
+        kotlinOptions.jvmTarget = "1.8"
+    }
 }
